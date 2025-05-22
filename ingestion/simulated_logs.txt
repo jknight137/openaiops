@@ -1,0 +1,100 @@
+2025-05-22T15:15:09.108784 | ERROR: Out of memory
+2025-05-22T15:15:09.108784 | Service started successfully
+2025-05-22T15:15:09.108784 | Received request
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Received request
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Received request
+2025-05-22T15:15:09.109283 | Received request
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | Background job ran
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | CRITICAL: Database timeout
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | Received request
+2025-05-22T15:15:09.109283 | Database query executed
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Service started successfully
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | Received request
+2025-05-22T15:15:09.109283 | User login succeeded
+2025-05-22T15:15:09.109283 | CRITICAL: Database timeout
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Received request
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Received request
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | User login succeeded
+2025-05-22T15:15:09.109782 | ERROR: Service unavailable
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | User login succeeded
+2025-05-22T15:15:09.109782 | User login succeeded
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Background job ran
+2025-05-22T15:15:09.109782 | Database query executed
+2025-05-22T15:15:09.109782 | Received request
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | Service started successfully
+2025-05-22T15:15:09.109782 | User login succeeded
+2025-05-22T15:15:09.109782 | User login succeeded
+2025-05-22T15:15:09.110282 | Background job ran
+2025-05-22T15:15:09.110282 | Received request
+2025-05-22T15:15:09.110282 | CRITICAL: Database timeout
+2025-05-22T15:15:09.110282 | Received request
+2025-05-22T15:15:09.110282 | Service started successfully
+2025-05-22T15:15:09.110282 | Service started successfully
+2025-05-22T15:15:09.110282 | Background job ran
+2025-05-22T15:15:09.110282 | Received request
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | Background job ran
+2025-05-22T15:15:09.110282 | Received request
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | Service started successfully
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | User login succeeded
+2025-05-22T15:15:09.110282 | Background job ran
+2025-05-22T15:15:09.110282 | Database query executed
+2025-05-22T15:15:09.110282 | Received request
+2025-05-22T15:15:09.110282 | Service started successfully
+2025-05-22T15:15:09.110282 | Background job ran

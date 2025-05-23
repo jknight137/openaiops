@@ -1,35 +1,46 @@
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 
-def detect_metric_anomalies(input_csv="ingestion/simulated_metrics.csv", output_csv="ml/detected_anomalies.csv"):
-    df = pd.read_csv(input_csv)
-    metrics = df[["cpu", "mem", "latency"]]
+def detect_metric_anomalies(metrics, contamination=0.15):
+    # metrics: list of dicts (from simulate_data.generate_metrics)
+    if not metrics:
+        return []
+    df = pd.DataFrame(metrics)
+    if len(df) < 5:
+        # Not enough for ML, fallback to simple rule
+        df["anomaly"] = (df["cpu"] > 80) | (df["cpu"] < 20) | (df["mem"] > 85) | (df["latency"] > 200)
+    else:
+        clf = IsolationForest(contamination=contamination, random_state=42)
+        preds = clf.fit_predict(df[["cpu", "mem", "latency"]])
+        df["anomaly"] = preds == -1
+    result = []
+    for idx, row in df[df["anomaly"]].iterrows():
+        result.append({
+            "type": "metric",
+            "timestamp": row["timestamp"],
+            "cpu": row["cpu"],
+            "mem": row["mem"],
+            "latency": row["latency"],
+            "description": "Metric anomaly detected"
+        })
+    return result
 
-    # Simple outlier detection
-    clf = IsolationForest(contamination=0.1, random_state=42)
-    preds = clf.fit_predict(metrics)
-    df["anomaly"] = preds == -1
-
-    # Store only anomalies
-    anomalies = df[df["anomaly"]]
-    anomalies.to_csv(output_csv, index=False)
-    print(f"Detected {len(anomalies)} anomalies; written to {output_csv}")
-
-def detect_log_anomalies(input_txt="ingestion/simulated_logs.txt", output_csv="ml/log_anomalies.csv"):
-    with open(input_txt) as f:
-        lines = f.readlines()
-
-    results = []
-    for line in lines:
-        if "ERROR" in line or "CRITICAL" in line:
-            results.append({"timestamp": line.split("|")[0].strip(), "log": line.strip(), "severity": "high"})
-        elif "WARNING" in line:
-            results.append({"timestamp": line.split("|")[0].strip(), "log": line.strip(), "severity": "medium"})
-
-    df = pd.DataFrame(results)
-    df.to_csv(output_csv, index=False)
-    print(f"Detected {len(df)} log anomalies; written to {output_csv}")
-
-if __name__ == "__main__":
-    detect_metric_anomalies()
-    detect_log_anomalies()
+def detect_log_anomalies(logs):
+    # logs: list of dicts (from simulate_data.generate_logs)
+    anomalies = []
+    for entry in logs:
+        msg = entry["log"]
+        sev = None
+        if "CRITICAL" in msg or "ERROR" in msg:
+            sev = "high"
+        elif "WARNING" in msg:
+            sev = "medium"
+        if sev:
+            anomalies.append({
+                "type": "log",
+                "timestamp": entry["timestamp"],
+                "log": msg,
+                "severity": sev,
+                "description": f"Log {sev} anomaly"
+            })
+    return anomalies

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openaiops-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openaiops-api
+  template:
+    metadata:
+      labels:
+        app: openaiops-api
+    spec:
+      containers:
+        - name: openaiops-api
+          image: openaiops-api:latest
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - mountPath: /app/openaiops.db
+              name: db-volume
+              subPath: openaiops.db
+      volumes:
+        - name: db-volume
+          hostPath:
+            path: /tmp/openaiops-data
+            type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openaiops-api
+spec:
+  type: ClusterIP
+  selector:
+    app: openaiops-api
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

@@ -1,0 +1,49 @@
+api:
+  image: openaiops-api:latest
+  replicas: 1
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 256Mi
+  env:
+    - name: DB_URL
+      value: "postgresql://openaiops:openaiops@openaiops-postgres:5432/openaiops"
+
+ui:
+  image: openaiops-ui:latest
+  replicas: 1
+  resources:
+    limits:
+      cpu: 300m
+      memory: 256Mi
+    requests:
+      cpu: 50m
+      memory: 128Mi
+  env:
+    - name: API_URL
+      value: "http://openaiops-api:8000"
+
+postgres:
+  image: postgres:15
+  password: openaiops
+  storage: 1Gi
+
+ingress:
+  enabled: true
+  host: openaiops.local
+  tls: false
+
+autoscaling:
+  api:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    cpuThreshold: 70
+  ui:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 2
+    cpuThreshold: 70

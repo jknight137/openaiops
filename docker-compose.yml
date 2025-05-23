@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openaiops-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./openaiops.db:/app/openaiops.db
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: openaiops-ui
+    ports:
+      - "8050:8050"
+    depends_on:
+      - api
+    restart: unless-stopped
